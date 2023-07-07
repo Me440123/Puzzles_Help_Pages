@@ -4,15 +4,15 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=US-ASCII">
 <title>Towers</title>
-<link rel="previous" href="keen.html">
+<link rel="previous" href="sudoku.html">
 <link rel="ToC" href="index.html">
 <link rel="up" href="index.html">
-<link rel="index" href="docindex.html">
-<link rel="next" href="singles.html">
+<link rel="index" href="index.html">
+<link rel="next" href="unequal.html">
 <style type="text/css">body { word-wrap: break-word; } body.night { color: #dddddd; background: #000000; } body.night a:link { color: #8888ff; } body.night a:visited { color: #cc88ff; }</style></head>
 <body>
-<p><a href="keen.html">Previous</a> | <a href="index.html">Contents</a> | <a href="docindex.html">Index</a> | <a href="singles.html">Next</a></p>
-<h1><a name="C31"></a>Chapter 31: <a name="i0"></a>Towers</h1>
+<p><a href="sudoku.html">Previous</a> | <a href="index.html">Contents</a> | <a href="index.html">Index</a> | <a href="unequal.html">Next</a></p>
+<h1><a name="C6"></a>Chapter 6: <a name="i0"></a>Towers</h1>
 <p>
 You have a square grid. On each square of the grid you can build a tower, with its height ranging from 1 to the size of the grid. Around the edge of the grid are some numeric clues.
 </p>
@@ -32,10 +32,91 @@ Each numeric clue describes the number of towers that can be seen if you look in
 <p>
 In harder or larger puzzles, some towers will be specified for you as well as the clues round the edge, and some edge clues may be missing.
 </p>
+
+<h2><a name="S6.1"></a>6.1 <a name="i1"></a>Common actions</h2>
 <p>
-This puzzle appears on the web under various names, particularly &#8216;<a name="i1"></a>Skyscrapers&#8217;, but I don't know who first invented it.
+<em>On Android, please touch for left click and long press for right click. Also note that where this manual refers to pressing a letter on the keyboard, the Android version has icons at the bottom of the screen instead (Control and Shift are not available). There is also an optional "Night mode" which uses darker colours in low light.</em>
 </p>
-<h2><a name="S31.1"></a>31.1 <a name="i2"></a>Towers controls</h2>
+<p>
+These actions are all available from the <a name="i2"></a>&#8216;Game&#8217; menu and via <a name="i3"></a>keyboard shortcuts, in addition to any game-specific actions.
+</p>
+<p>
+(On <a name="i4"></a>Mac OS X, to conform with local user interface standards, these actions are situated on the <a name="i5"></a>&#8216;File&#8217; and <a name="i6"></a>&#8216;Edit&#8217; menus instead.)
+</p>
+<dl><dt>
+<a name="i7"></a><em>New game</em> (&#8216;N&#8217;, Ctrl+&#8216;N&#8217;)
+</dt>
+<dd>
+Starts a new game, with a random initial state.
+</dd>
+<dt>
+<a name="i8"></a><em>Restart game</em>
+</dt>
+<dd>
+Resets the current game to its initial state. (This can be undone.)
+</dd>
+<dt>
+<a name="i9"></a><em>Load</em>
+</dt>
+<dd>
+Loads a saved game from a file on disk.
+</dd>
+<dt>
+<a name="i10"></a><em>Save</em>
+</dt>
+<dd>
+Saves the current state of your game to a file on disk.
+<p>
+The Load and Save operations preserve your entire game history (so you can save, reload, and still Undo and Redo things you had done before saving).
+</p>
+
+</dd>
+<dt>
+<a name="i11"></a><em>Print</em>
+</dt>
+<dd>
+Where supported (currently only on Windows), brings up a dialog allowing you to print an arbitrary number of puzzles randomly generated from the current parameters, optionally including the current puzzle. (Only for puzzles which make sense to print, of course &#8211; it's hard to think of a sensible printable representation of Fifteen!)
+</dd>
+<dt>
+<a name="i12"></a><em>Undo</em> (&#8216;U&#8217;, Ctrl+&#8216;Z&#8217;, Ctrl+&#8216;_&#8217;, &#8216;*&#8217;)
+</dt>
+<dd>
+Undoes a single move. (You can undo moves back to the start of the session.)
+</dd>
+<dt>
+<a name="i13"></a><em>Redo</em> (&#8216;R&#8217;, Ctrl+&#8216;R&#8217;, &#8216;#&#8217;)
+</dt>
+<dd>
+Redoes a previously undone move.
+</dd>
+<dt>
+<a name="i14"></a><em>Copy</em>
+</dt>
+<dd>
+Copies the current state of your game to the clipboard in text format, so that you can paste it into (say) an e-mail client or a web message board if you're discussing the game with someone else. (Not all games support this feature.)
+</dd>
+<dt>
+<a name="i15"></a><em>Solve</em>
+</dt>
+<dd>
+Transforms the puzzle instantly into its solved state. For some games (Cube) this feature is not supported at all because it is of no particular use. For other games (such as Pattern), the solved state can be used to give you information, if you can't see how a solution can exist at all or you want to know where you made a mistake. For still other games (such as Sixteen), automatic solution tells you nothing about how to <em>get</em> to the solution, but it does provide a useful way to get there quickly so that you can experiment with set-piece moves and transformations.
+<p>
+Some games (such as Solo) are capable of solving a game ID you have typed in from elsewhere. Other games (such as Rectangles) cannot solve a game ID they didn't invent themself, but when they did invent the game ID they know what the solution is already. Still other games (Pattern) can solve <em>some</em> external game IDs, but only if they aren't too difficult.
+</p>
+<p>
+The &#8216;Solve&#8217; command adds the solved state to the end of the undo chain for the puzzle. In other words, if you want to go back to solving it yourself after seeing the answer, you can just press Undo.
+</p>
+
+</dd>
+<dt>
+<a name="i16"></a><a name="i17"></a><em>Quit</em> (&#8216;Q&#8217;, Ctrl+&#8216;Q&#8217;)
+</dt>
+<dd>
+Closes the application entirely.
+</dd>
+</dl>
+
+<h2><a name="S6.2"></a>6.2 <a name="i2"></a>Towers controls</h2>
 <p>
 <em>On Android, please touch for left click and long press for right click. Also note that where this manual refers to pressing a letter on the keyboard, the Android version has icons at the bottom of the screen instead (Control and Shift are not available). There is also an optional "Night mode" which uses darker colours in low light.</em>
 </p>
@@ -66,10 +147,8 @@ Pressing M will fill in a full set of pencil marks in every square that does not
 <p>
 Left-clicking a clue will mark it as done (grey it out), or unmark it if it is already marked. Holding Control or Shift and pressing an arrow key likewise marks any clue in the given direction.
 </p>
-<p>
-(All the actions described in <a href="common.html#S2.1">section 2.1</a> are also available.)
-</p>
-<h2><a name="S31.2"></a>31.2 <a name="i3"></a>Towers parameters</h2>
+
+<h2><a name="S6.3"></a>6.3 <a name="i3"></a>Towers parameters</h2>
 <p>
 These parameters are available from the &#8216;Custom...&#8217; option on the &#8216;Type&#8217; menu.
 </p>

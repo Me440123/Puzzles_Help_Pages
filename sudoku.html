@@ -3,16 +3,16 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=US-ASCII">
-<title>Solo</title>
-<link rel="previous" href="pattern.html">
+<title>Sudoku</title>
+<link rel="previous" href="signpost.html">
 <link rel="ToC" href="index.html">
 <link rel="up" href="index.html">
-<link rel="index" href="docindex.html">
-<link rel="next" href="mines.html">
+<link rel="index" href="index.html">
+<link rel="next" href="towers.html">
 <style type="text/css">body { word-wrap: break-word; } body.night { color: #dddddd; background: #000000; } body.night a:link { color: #8888ff; } body.night a:visited { color: #cc88ff; }</style></head>
 <body>
-<p><a href="pattern.html">Previous</a> | <a href="index.html">Contents</a> | <a href="docindex.html">Index</a> | <a href="mines.html">Next</a></p>
-<h1><a name="C11"></a>Chapter 11: <a name="i0"></a>Sudoku</h1>
+<p><a href="signpost.html">Previous</a> | <a href="index.html">Contents</a> | <a href="index.html">Index</a> | <a href="towers.html">Next</a></p>
+<h1><a name="C5"></a>Chapter 5: <a name="i0"></a>Sudoku</h1>
 <p>
 You have a square grid, which is divided into as many equally sized sub-blocks as the grid has rows. Each square must be filled in with a digit from 1 to the size of the grid, in such a way that
 </p>
@@ -41,21 +41,96 @@ Another available mode is &#8216;killer&#8217;. In this mode, clues are not give
 <p>
 If you select a puzzle size which requires more than 9 digits, the additional digits will be letters of the alphabet. For example, if you select 3&#215;4 then the digits which go in your grid will be 1 to 9, plus &#8216;<code>a</code>&#8217;, &#8216;<code>b</code>&#8217; and &#8216;<code>c</code>&#8217;. This cannot be selected for killer puzzles.
 </p>
-<p>
-I first saw this puzzle in <a name="i1"></a>Nikoli <a href="#p0">[5]</a>, although it's also been popularised by various newspapers under the name &#8216;Sudoku&#8217; or &#8216;Su Doku&#8217;. Howard Garns is considered the inventor of the modern form of the puzzle, and it was first published in <em>Dell Pencil Puzzles and Word Games</em>. A more elaborate treatment of the history of the puzzle can be found on Wikipedia <a href="#p1">[6]</a>.
-</p>
-<p><a name="p0"></a>
-[5] <a href="https://www.nikoli.co.jp/en/puzzles/sudoku/"><code>https://www.nikoli.co.jp/en/puzzles/sudoku/</code></a>
-</p>
-<p><a name="p1"></a>
-[6] <a href="http://en.wikipedia.org/wiki/Sudoku"><code>http://en.wikipedia.org/wiki/Sudoku</code></a>
-</p>
-<h2><a name="S11.1"></a>11.1 <a name="i2"></a>Solo controls</h2>
+
+<h2><a name="S5.1"></a>5.1 <a name="i1"></a>Common actions</h2>
 <p>
 <em>On Android, please touch for left click and long press for right click. Also note that where this manual refers to pressing a letter on the keyboard, the Android version has icons at the bottom of the screen instead (Control and Shift are not available). There is also an optional "Night mode" which uses darker colours in low light.</em>
 </p>
 <p>
-To play Solo, simply click the mouse in any empty square and then type a digit or letter on the keyboard to fill that square. If you make a mistake, click the mouse in the incorrect square and press Space to clear it again (or use the Undo feature).
+These actions are all available from the <a name="i2"></a>&#8216;Game&#8217; menu and via <a name="i3"></a>keyboard shortcuts, in addition to any game-specific actions.
+</p>
+<p>
+(On <a name="i4"></a>Mac OS X, to conform with local user interface standards, these actions are situated on the <a name="i5"></a>&#8216;File&#8217; and <a name="i6"></a>&#8216;Edit&#8217; menus instead.)
+</p>
+<dl><dt>
+<a name="i7"></a><em>New game</em> (&#8216;N&#8217;, Ctrl+&#8216;N&#8217;)
+</dt>
+<dd>
+Starts a new game, with a random initial state.
+</dd>
+<dt>
+<a name="i8"></a><em>Restart game</em>
+</dt>
+<dd>
+Resets the current game to its initial state. (This can be undone.)
+</dd>
+<dt>
+<a name="i9"></a><em>Load</em>
+</dt>
+<dd>
+Loads a saved game from a file on disk.
+</dd>
+<dt>
+<a name="i10"></a><em>Save</em>
+</dt>
+<dd>
+Saves the current state of your game to a file on disk.
+<p>
+The Load and Save operations preserve your entire game history (so you can save, reload, and still Undo and Redo things you had done before saving).
+</p>
+
+</dd>
+<dt>
+<a name="i11"></a><em>Print</em>
+</dt>
+<dd>
+Where supported (currently only on Windows), brings up a dialog allowing you to print an arbitrary number of puzzles randomly generated from the current parameters, optionally including the current puzzle. (Only for puzzles which make sense to print, of course &#8211; it's hard to think of a sensible printable representation of Fifteen!)
+</dd>
+<dt>
+<a name="i12"></a><em>Undo</em> (&#8216;U&#8217;, Ctrl+&#8216;Z&#8217;, Ctrl+&#8216;_&#8217;, &#8216;*&#8217;)
+</dt>
+<dd>
+Undoes a single move. (You can undo moves back to the start of the session.)
+</dd>
+<dt>
+<a name="i13"></a><em>Redo</em> (&#8216;R&#8217;, Ctrl+&#8216;R&#8217;, &#8216;#&#8217;)
+</dt>
+<dd>
+Redoes a previously undone move.
+</dd>
+<dt>
+<a name="i14"></a><em>Copy</em>
+</dt>
+<dd>
+Copies the current state of your game to the clipboard in text format, so that you can paste it into (say) an e-mail client or a web message board if you're discussing the game with someone else. (Not all games support this feature.)
+</dd>
+<dt>
+<a name="i15"></a><em>Solve</em>
+</dt>
+<dd>
+Transforms the puzzle instantly into its solved state. For some games (Cube) this feature is not supported at all because it is of no particular use. For other games (such as Pattern), the solved state can be used to give you information, if you can't see how a solution can exist at all or you want to know where you made a mistake. For still other games (such as Sixteen), automatic solution tells you nothing about how to <em>get</em> to the solution, but it does provide a useful way to get there quickly so that you can experiment with set-piece moves and transformations.
+<p>
+Some games (such as Sudoku) are capable of solving a game ID you have typed in from elsewhere. Other games (such as Rectangles) cannot solve a game ID they didn't invent themself, but when they did invent the game ID they know what the solution is already. Still other games (Pattern) can solve <em>some</em> external game IDs, but only if they aren't too difficult.
+</p>
+<p>
+The &#8216;Solve&#8217; command adds the solved state to the end of the undo chain for the puzzle. In other words, if you want to go back to solving it yourself after seeing the answer, you can just press Undo.
+</p>
+
+</dd>
+<dt>
+<a name="i16"></a><a name="i17"></a><em>Quit</em> (&#8216;Q&#8217;, Ctrl+&#8216;Q&#8217;)
+</dt>
+<dd>
+Closes the application entirely.
+</dd>
+</dl>
+
+<h2><a name="S5.2"></a>5.2 <a name="i2"></a>Sudoku controls</h2>
+<p>
+<em>On Android, please touch for left click and long press for right click. Also note that where this manual refers to pressing a letter on the keyboard, the Android version has icons at the bottom of the screen instead (Control and Shift are not available). There is also an optional "Night mode" which uses darker colours in low light.</em>
+</p>
+<p>
+To play Sudoku, simply click the mouse in any empty square and then type a digit or letter on the keyboard to fill that square. If you make a mistake, click the mouse in the incorrect square and press Space to clear it again (or use the Undo feature).
 </p>
 <p>
 If you <em>right</em>-click in a square and then type a number, that number will be entered in the square as a &#8216;pencil mark&#8217;. You can have pencil marks for multiple numbers in the same square. Squares containing filled-in numbers cannot also contain pencil marks.
@@ -72,21 +147,19 @@ All pencil marks in a square are erased when you left-click and type a number, o
 <p>
 Alternatively, use the cursor keys to move the mark around the grid. Pressing the return key toggles the mark (from a normal mark to a pencil mark), and typing a number in is entered in the square in the appropriate way; typing in a 0 or using the space bar will clear a filled square.
 </p>
+
+<h2><a name="S5.3"></a>5.3 <a name="i3"></a>Sudoku parameters</h2>
 <p>
-(All the actions described in <a href="common.html#S2.1">section 2.1</a> are also available.)
-</p>
-<h2><a name="S11.2"></a>11.2 <a name="i3"></a>Solo parameters</h2>
-<p>
-Solo allows you to configure two separate dimensions of the puzzle grid on the &#8216;Type&#8217; menu: the number of columns, and the number of rows, into which the main grid is divided. (The size of a block is the inverse of this: for example, if you select 2 columns and 3 rows, each actual block will have 3 columns and 2 rows.)
+Sudoku allows you to configure two separate dimensions of the puzzle grid on the &#8216;Type&#8217; menu: the number of columns, and the number of rows, into which the main grid is divided. (The size of a block is the inverse of this: for example, if you select 2 columns and 3 rows, each actual block will have 3 columns and 2 rows.)
 </p>
 <p>
-If you tick the &#8216;X&#8217; checkbox, Solo will apply the optional extra constraint that the two main diagonals of the grid also contain one of every digit. (This is sometimes known as &#8216;Sudoku-X&#8217; in newspapers.) In this mode, the squares on the two main diagonals will be shaded slightly so that you know it's enabled.
+If you tick the &#8216;X&#8217; checkbox, Sudoku will apply the optional extra constraint that the two main diagonals of the grid also contain one of every digit. (This is sometimes known as &#8216;Sudoku-X&#8217; in newspapers.) In this mode, the squares on the two main diagonals will be shaded slightly so that you know it's enabled.
 </p>
 <p>
-If you tick the &#8216;Jigsaw&#8217; checkbox, Solo will generate randomly shaped sub-blocks. In this mode, the actual grid size will be taken to be the product of the numbers entered in the &#8216;Columns&#8217; and &#8216;Rows&#8217; boxes. There is no reason why you have to enter a number greater than 1 in both boxes; Jigsaw mode has no constraint on the grid size, and it can even be a prime number if you feel like it.
+If you tick the &#8216;Jigsaw&#8217; checkbox, Sudoku will generate randomly shaped sub-blocks. In this mode, the actual grid size will be taken to be the product of the numbers entered in the &#8216;Columns&#8217; and &#8216;Rows&#8217; boxes. There is no reason why you have to enter a number greater than 1 in both boxes; Jigsaw mode has no constraint on the grid size, and it can even be a prime number if you feel like it.
 </p>
 <p>
-If you tick the &#8216;Killer&#8217; checkbox, Solo will generate a set of of cages, which are randomly shaped and drawn in an outline of a different colour. Each of these regions contains a smaller clue which shows the digit sum of all the squares in this region.
+If you tick the &#8216;Killer&#8217; checkbox, Sudoku will generate a set of of cages, which are randomly shaped and drawn in an outline of a different colour. Each of these regions contains a smaller clue which shows the digit sum of all the squares in this region.
 </p>
 <p>
 You can also configure the type of symmetry shown in the generated puzzles. More symmetry makes the puzzles look prettier but may also make them easier, since the symmetry constraints can force more clues than necessary to be present. Completely asymmetric puzzles have the freedom to contain as few clues as possible.
@@ -95,7 +168,7 @@ You can also configure the type of symmetry shown in the generated puzzles. More
 Finally, you can configure the difficulty of the generated puzzles. Difficulty levels are judged by the complexity of the techniques of deduction required to solve the puzzle: each level requires a mode of reasoning which was not necessary in the previous one. In particular, on difficulty levels &#8216;Trivial&#8217; and &#8216;Basic&#8217; there will be a square you can fill in with a single number at all times, whereas at &#8216;Intermediate&#8217; level and beyond you will have to make partial deductions about the <em>set</em> of squares a number could be in (or the set of numbers that could be in a square). At &#8216;Unreasonable&#8217; level, even this is not enough, and you will eventually have to make a guess, and then backtrack if it turns out to be wrong.
 </p>
 <p>
-Generating difficult puzzles is itself difficult: if you select one of the higher difficulty levels, Solo may have to make many attempts at generating a puzzle before it finds one hard enough for you. Be prepared to wait, especially if you have also configured a large puzzle size.
+Generating difficult puzzles is itself difficult: if you select one of the higher difficulty levels, Sudoku may have to make many attempts at generating a puzzle before it finds one hard enough for you. Be prepared to wait, especially if you have also configured a large puzzle size.
 </p>
 
 <hr><address></address></body>
